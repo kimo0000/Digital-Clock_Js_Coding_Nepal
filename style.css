@@ -1,0 +1,88 @@
+*,
+::after,
+::before {
+  padding: 0;
+  margin: 0;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+:root {
+  --dark: #000;
+  --light: #fff;
+}
+body {
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  background-color: var(--light);
+  transition: all 0.3s;
+}
+.dark {
+  --dark: #fff;
+  --light: #000;
+}
+.wrapper {
+  width: 25%;
+  height: 180px;
+  padding: 15px;
+  border-radius: 12px;
+  gap: 10px;
+  background-color: var(--dark);
+  position: relative;
+  display: grid;
+  place-items: center;
+  transition: all 0.3s;
+}
+@media (max-width: 768px) {
+  .wrapper {
+    width: 40%;
+  }
+}
+.clock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+.clock div {
+  width: 60px;
+  height: 60px;
+  background-color: var(--light);
+  display: grid;
+  place-items: center;
+  border-radius: 8px;
+  color: var(--dark);
+  transition: all 0.3s;
+}
+.clock div span:first-of-type {
+  font-size: 30px;
+  font-weight: 700;
+}
+.clock div span:last-of-type {
+  font-size: 12px;
+  color: var(--dark);
+  transition: all 0.3s;
+}
+.wrapper i,
+.clock p {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  color: var(--light);
+  cursor: pointer;
+}
+.clock p {
+  font-size: 12px;
+  top: 30%;
+  right: 3px;
+  font-weight: 700;
+}
+@media (min-width: 768px) {
+  .clock p {
+    right: 30px;
+  }
+}
